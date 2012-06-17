@@ -11,12 +11,19 @@
 
 @interface BullseyeViewController ()
 
+// Variables for handling generated target number.
+@property (nonatomic) int t;
+@property (nonatomic, strong) NSNumber *target;
+// Attempt counting variable.
+@property (nonatomic, strong) NSNumber *attempt;
+
 @end
 
 @implementation BullseyeViewController
 
-int target = 0;
-NSNumber *targetNumber = nil;
+@synthesize t = _t;
+@synthesize target = _target;
+@synthesize attempt = _attempt;
 
 @synthesize targetNumber = _targetNumber;
 @synthesize slider = _slider;
@@ -24,12 +31,14 @@ NSNumber *targetNumber = nil;
 @synthesize nextButton = _nextButton;
 @synthesize result = _result;
 @synthesize sliderValue = _sliderValue;
+@synthesize attempts = _attempts;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	[self reloadGame];
-    
+    // Initialize counting variable.
+    self.target = [[NSNumber alloc] initWithInt:0];
 }
 
 - (void)viewDidUnload
@@ -40,6 +49,7 @@ NSNumber *targetNumber = nil;
     [self setNextButton:nil];
     [self setResult:nil];
     [self setSliderValue:nil];
+    [self setAttempts:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -54,23 +64,32 @@ NSNumber *targetNumber = nil;
 - (void)reloadGame 
 {
     // Generate a target number for the first time.
-    target = [BullseyeModel generateTarget];
-    targetNumber = [[NSNumber alloc] initWithInt:target];
-    self.targetNumber.text = [targetNumber stringValue];
+    self.t = [BullseyeModel generateTarget];
+    self.target = [[NSNumber alloc] initWithInt:self.t];
+    self.targetNumber.text = [self.target stringValue];
     self.result.textColor = [UIColor blackColor];
-    self.result.text = [NSString stringWithFormat:@"Slide the slider to the position of number %d", target];
+    self.result.text = 
+    [NSString stringWithFormat:@"Slide the slider to the position of number %d", self.target];
+    self.attempts.text = @"0";
+    self.nextButton.hidden = YES;
 }
 
 - (IBAction)hit:(id)sender 
 {
-    if ((int)([self.slider value] *100) == target) {
+    if ((int)([self.slider value] *100) == self.t) {
         self.result.textColor = [UIColor greenColor];
-        self.result.text = @"BINGO!";
-        //[self reloadGame];
+        self.result.text = @"BINGO! Tap Next to continue ...";
+        self.nextButton.hidden = NO;
+        self.hitButton.enabled = NO;
     }
     else {
         self.result.textColor = [UIColor redColor];
         self.result.text = @"Oops ... Try again!";
+        // Increment the attempt count.
+        int attemptValue = [self.attempt intValue];
+        self.attempt = [NSNumber numberWithInt:attemptValue + 1];
+        // Display the attemp count.
+        self.attempts.text = [self.attempt stringValue];
     }
 }
 
@@ -79,12 +98,13 @@ NSNumber *targetNumber = nil;
     [self reloadGame];
 }
 
+/*
 - (IBAction)sliderMoved:(UISlider *)sender 
 {
     NSNumber *sliderAt = [[NSNumber alloc] initWithFloat:[sender value]];
     //self.sliderValue.text = [sliderAt stringValue]; 
 }
-
+*/
 
 @end
 
