@@ -15,6 +15,7 @@
 		F8168482158D49B10069B96A /* BullseyeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8168481158D49B10069B96A /* BullseyeAppDelegate.m */; };
 		F8168485158D49B10069B96A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8168483158D49B10069B96A /* MainStoryboard.storyboard */; };
 		F8168488158D49B10069B96A /* BullseyeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8168487158D49B10069B96A /* BullseyeViewController.m */; };
+		F8168490158D5B4B0069B96A /* BullseyeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F816848F158D5B4B0069B96A /* BullseyeModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		F8168471158D49B10069B96A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8168473158D49B10069B96A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8168475158D49B10069B96A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F8168479158D49B10069B96A /* Bullseye-Info.plist */ = {isa = PBXFileReference; path = "Bullseye-Info.plist"; sourceTree = "<group>"; };
+		F8168479158D49B10069B96A /* Bullseye-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bullseye-Info.plist"; sourceTree = "<group>"; };
 		F816847B158D49B10069B96A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F816847D158D49B10069B96A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F816847F158D49B10069B96A /* Bullseye-Prefix.pch */ = {isa = PBXFileReference; path = "Bullseye-Prefix.pch"; sourceTree = "<group>"; };
-		F8168480158D49B10069B96A /* BullseyeAppDelegate.h */ = {isa = PBXFileReference; path = BullseyeAppDelegate.h; sourceTree = "<group>"; };
+		F816847F158D49B10069B96A /* Bullseye-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bullseye-Prefix.pch"; sourceTree = "<group>"; };
+		F8168480158D49B10069B96A /* BullseyeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BullseyeAppDelegate.h; sourceTree = "<group>"; };
 		F8168481158D49B10069B96A /* BullseyeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BullseyeAppDelegate.m; sourceTree = "<group>"; };
 		F8168484158D49B10069B96A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F8168486158D49B10069B96A /* BullseyeViewController.h */ = {isa = PBXFileReference; path = BullseyeViewController.h; sourceTree = "<group>"; };
+		F8168486158D49B10069B96A /* BullseyeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BullseyeViewController.h; sourceTree = "<group>"; };
 		F8168487158D49B10069B96A /* BullseyeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BullseyeViewController.m; sourceTree = "<group>"; };
+		F816848E158D5B4B0069B96A /* BullseyeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BullseyeModel.h; sourceTree = "<group>"; };
+		F816848F158D5B4B0069B96A /* BullseyeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BullseyeModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				F8168480158D49B10069B96A /* BullseyeAppDelegate.h */,
+				F816848E158D5B4B0069B96A /* BullseyeModel.h */,
+				F816848F158D5B4B0069B96A /* BullseyeModel.m */,
 				F8168481158D49B10069B96A /* BullseyeAppDelegate.m */,
 				F8168483158D49B10069B96A /* MainStoryboard.storyboard */,
 				F8168486158D49B10069B96A /* BullseyeViewController.h */,
@@ -165,6 +170,7 @@
 				F816847E158D49B10069B96A /* main.m in Sources */,
 				F8168482158D49B10069B96A /* BullseyeAppDelegate.m in Sources */,
 				F8168488158D49B10069B96A /* BullseyeViewController.m in Sources */,
+				F8168490158D5B4B0069B96A /* BullseyeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
