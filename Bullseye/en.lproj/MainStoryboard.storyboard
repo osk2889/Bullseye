@@ -39,9 +39,12 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Rtc-Zf-aJT">
                                 <rect key="frame" x="18" y="163" width="444" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="2" eventType="valueChanged" id="oc6-ko-0al"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="idb-A0-wW5">
-                                <rect key="frame" x="20" y="145" width="42" height="21"/>
+                                <rect key="frame" x="20" y="139" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -55,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Kf-h2-WDn">
-                                <rect key="frame" x="85" y="203" width="72" height="37"/>
+                                <rect key="frame" x="134" y="203" width="213" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Hit!">
@@ -70,7 +73,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qap-Bm-Nra">
-                                <rect key="frame" x="322" y="203" width="72" height="37"/>
+                                <rect key="frame" x="388" y="243" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Next">
@@ -91,6 +94,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Swh-Bh-Iwk">
+                                <rect key="frame" x="214" y="210" width="53" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="r6V-tY-R6Y">
+                                <rect key="frame" x="228" y="139" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.90980398654937744" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -101,11 +118,12 @@
                         <outlet property="nextButton" destination="qap-Bm-Nra" id="PB5-H9-mmD"/>
                         <outlet property="result" destination="8AI-wn-VXU" id="TcA-gs-mDD"/>
                         <outlet property="slider" destination="Rtc-Zf-aJT" id="aGs-DF-MZM"/>
+                        <outlet property="sliderValue" destination="Swh-Bh-Iwk" id="ZSt-7Q-yEA"/>
                         <outlet property="targetNumber" destination="3dP-fK-1xa" id="xZq-Zb-4fR"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="381" y="175"/>
+            <point key="canvasLocation" x="398" y="177"/>
         </scene>
     </scenes>
     <classes>
@@ -116,6 +134,7 @@
                 <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="result" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="slider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sliderValue" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="targetNumber" candidateClass="UILabel"/>
             </relationships>
         </class>

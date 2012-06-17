@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *hitButton;
 @property (strong, nonatomic) IBOutlet UIButton *nextButton;
 @property (strong, nonatomic) IBOutlet UILabel *result;
+@property (strong, nonatomic) IBOutlet UILabel *sliderValue;
 
 
 @end

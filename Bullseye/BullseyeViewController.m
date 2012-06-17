@@ -16,12 +16,14 @@
 @implementation BullseyeViewController
 
 int target = 0;
+NSNumber *targetNumber = nil;
 
 @synthesize targetNumber = _targetNumber;
 @synthesize slider = _slider;
 @synthesize hitButton = _hitButton;
 @synthesize nextButton = _nextButton;
 @synthesize result = _result;
+@synthesize sliderValue = _sliderValue;
 
 - (void)viewDidLoad
 {
@@ -37,6 +39,7 @@ int target = 0;
     [self setHitButton:nil];
     [self setNextButton:nil];
     [self setResult:nil];
+    [self setSliderValue:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -52,7 +55,7 @@ int target = 0;
 {
     // Generate a target number for the first time.
     target = [BullseyeModel generateTarget];
-    NSNumber *targetNumber = [[NSNumber alloc] initWithInt:target];
+    targetNumber = [[NSNumber alloc] initWithInt:target];
     self.targetNumber.text = [targetNumber stringValue];
     self.result.textColor = [UIColor blackColor];
     self.result.text = [NSString stringWithFormat:@"Slide the slider to the position of number %d", target];
@@ -60,7 +63,7 @@ int target = 0;
 
 - (IBAction)hit:(id)sender 
 {
-    if ([self.slider value] == (float)target) {
+    if ((int)([self.slider value] *100) == target) {
         self.result.textColor = [UIColor greenColor];
         self.result.text = @"BINGO!";
         //[self reloadGame];
@@ -75,6 +78,13 @@ int target = 0;
 {
     [self reloadGame];
 }
+
+- (IBAction)sliderMoved:(UISlider *)sender 
+{
+    NSNumber *sliderAt = [[NSNumber alloc] initWithFloat:[sender value]];
+    //self.sliderValue.text = [sliderAt stringValue]; 
+}
+
 
 @end
 
